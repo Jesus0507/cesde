@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54">
+  <g id="Grupo_43" data-name="Grupo 43" transform="translate(-844 -1073)">
+    <path id="Icon_material-attach-money" data-name="Icon material-attach-money" d="M20.049,19.736c-4.378-1.138-5.786-2.314-5.786-4.146,0-2.1,1.948-3.568,5.207-3.568,3.433,0,4.706,1.639,4.821,4.05h4.262a7.688,7.688,0,0,0-6.191-7.348V4.5H16.577V8.666c-3.741.81-6.75,3.24-6.75,6.962,0,4.455,3.684,6.673,9.064,7.965,4.821,1.157,5.786,2.854,5.786,4.648,0,1.331-.945,3.452-5.207,3.452-3.973,0-5.535-1.774-5.747-4.05H9.48c.231,4.224,3.394,6.6,7.1,7.386v4.185h5.786V35.068c3.761-.714,6.75-2.893,6.75-6.846C29.113,22.744,24.426,20.874,20.049,19.736Z" transform="translate(851.703 1078.143)" fill="#ee2b7b" stroke="#ee2b7b" stroke-width="1"/>
+    <g id="Elipse_17" data-name="Elipse 17" transform="translate(844 1073)" fill="none" stroke="#ee2b7b" stroke-width="3">
+      <circle cx="27" cy="27" r="27" stroke="none"/>
+      <circle cx="27" cy="27" r="25.5" fill="none"/>
+    </g>
+  </g>
+</svg>

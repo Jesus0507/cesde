@@ -1,0 +1,54 @@
+:root{
+    --white:#FFFFFF;
+    --gray-100:#424242;
+    --gray-75:#707070;
+    --gray-50:#706F6F;
+    --gray-25:#00000029;
+    --gray-10:#F4F4F4;
+    --blue-light:#65B3D5;
+    --fuchsia-dark:#BB5CD5;
+    --pink:#EE2B7B;
+    --green:#06C5B7;
+    --green-light:#9EF0EA;
+}
+.desktop{
+    @media(max-width:992px){
+        display: none !important;
+    }
+}
+.mobile{
+    display: none;
+    @media(max-width:992px){
+        display: block !important;
+    }
+}
+.wpbf-button, input[type=submit]{
+    position:initial;
+}
+html,body{
+    scroll-behavior: smooth;
+    color:var(--gray-100);
+    overflow-x:hidden;
+}
+.cesde-single-main {
+    max-width: 1250px;
+    margin: auto;
+    padding: 0 15px;
+}
+.breadcumbs {
+    @media(max-width:767px){
+        display: none;
+    }
+}
+.sedes-breadcumb{
+    max-width:1200px;
+    margin:auto;
+    margin-top:50px;
+   
+}
+.sedes-breadcumb> span{
+    &:last-of-type{
+        color:var(--pink)
+    }
+}
+
