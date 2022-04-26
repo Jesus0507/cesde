@@ -11,10 +11,21 @@ article.calendar-item {
     max-height: 660px;
     overflow: auto;
     margin-bottom: 60px;
+   
     &::-webkit-scrollbar{
         display: none;
     }
-    
+    .simplebar-track.simplebar-vertical {
+        top: 0;
+        width: 16px;
+        background: white;
+    }
+    .simplebar-scrollbar.simplebar-visible:before {
+        opacity: 1;
+        transition: opacity 0s linear;
+        background: #424242;
+        cursor: grabbing;
+    }
 }
 .show-calendar-time {
     display: flex;

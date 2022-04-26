@@ -3,8 +3,8 @@ function cesde_calendar_time_function($atts){
     ob_start();
     ?>
 <div id="calendar-home-wrapper">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide calender-home-content">
+   
+        <div id="calender-home-content" class="calender-home-content">
         <?php
         // get posts
         $the_query = new WP_Query(array(
@@ -51,8 +51,7 @@ function cesde_calendar_time_function($atts){
         ?>
         </div>
     </div>
-    <div class="swiper-scrollbar"></div>
-</div>
+   
     <?php
     return ob_get_clean();
 }

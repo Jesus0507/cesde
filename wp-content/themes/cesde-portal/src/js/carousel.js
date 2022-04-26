@@ -1,6 +1,7 @@
 // import Swiper JS
 import Swiper, { Pagination,Autoplay,EffectFade,Navigation,Scrollbar } from 'swiper';
-
+import SimpleBar from 'simplebar'; // or "import SimpleBar from 'simplebar';" if you want to use it manually.
+import 'simplebar/dist/simplebar.css';
 // import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -58,17 +59,9 @@ if(cesde_time_line_container){
 }
 
 if(calendarHomeWrapper){
-  console.log(calendarHomeWrapper)
-  const calendarHomeWrapperSwiper = new Swiper('#calendar-home-wrapper',{
-    modules: [Scrollbar],
-    direction: "vertical",
-    slidesPerView: "auto",
-    autoHeight:true,
-    freeMode: true,
-    scrollbar: {
-      el: ".swiper-scrollbar",
-      draggable: true,
-    },
-    mousewheel: true,
-  })
+  const calendarSimpleScroll = new SimpleBar(document.getElementById('calender-home-content'),{
+    autoHide: false,
+    forceVisible:'y',
+    ariaLabel: 'Calendario cesde' 
+  });
 }
