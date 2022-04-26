@@ -32,9 +32,13 @@ function cesde_styles_scripts(){
     wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/assets/js/main.js', ['wpbf-site'], VERSION_CESDE, true );
 }
 
+//cut excerpt 
 
+function cesde_custom_excerpts($limit) {
+    return wp_trim_words(get_the_excerpt(), $limit, '...');
+}
    
-
+//includes
     require_once __DIR__ . '/inc/post-types/post-types.php';
     require_once __DIR__ . '/inc/extras/breadcumb.php';
     require_once(__DIR__ . '/inc/shortcodes/shortcodes.php');

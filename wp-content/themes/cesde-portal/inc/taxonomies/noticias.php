@@ -26,6 +26,11 @@ if ( ! function_exists( 'programa_taxonomy' ) ) {
             'items_list'                 => __( 'Lista de cat. de noticias', 'cesde_portal' ),
             'items_list_navigation'      => __( 'Lista de navegación', 'cesde_portal' ),
         );
+        $rewrite = array(
+            'slug'                       => 'noticias-cesde',
+            'with_front'                 => true,
+            'hierarchical'               => true,
+        );
         $args = array(
             'labels'                     => $labels,
             'hierarchical'               => true,
@@ -34,7 +39,7 @@ if ( ! function_exists( 'programa_taxonomy' ) ) {
             'show_admin_column'          => true,
             'show_in_nav_menus'          => true,
             'show_tagcloud'              => true,
-            'rewrite'                    => false,
+            'rewrite'                    => $rewrite,
         );
         register_taxonomy( 'programa_taxonomy', array( 'cesde_noticias' ), $args );
     
