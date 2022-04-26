@@ -44,7 +44,7 @@ if ( ! function_exists('cesde_escuelas_custom_post_types') ) {
             'description'           => __( 'Nuestras escuelas', 'cesde_portal' ),
             'labels'                => $labels,
             'supports'              => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
-            'taxonomies'            => false,
+            'taxonomies'            => [],
             'hierarchical'          => false,
             'public'                => true,
             'show_ui'               => true,

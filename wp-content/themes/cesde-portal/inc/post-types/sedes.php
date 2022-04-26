@@ -64,7 +64,30 @@ if ( ! function_exists('cesde_Sedes_custom_post_types') ) {
             'rest_base'             => 'sedes',
             'rest_controller_class' => 'WP_REST_Posts_Controller',
         );
-        register_post_type( 'cesde_sedes', $args );
+        register_post_type( 'cesde_sedes', array(
+            'label'                 => __( 'sede', 'cesde_portal' ),
+            'description'           => __( 'Nuestras Sedes', 'cesde_portal' ),
+            'labels'                => $labels,
+            'supports'              => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields' ),
+            'taxonomies'            => array(''),
+            'hierarchical'          => false,
+            'public'                => true,
+            'show_ui'               => true,
+            'show_in_menu'          => true,
+            'menu_position'         => 5,
+            'menu_icon'             => 'dashicons-building',
+            'show_in_admin_bar'     => true,
+            'show_in_nav_menus'     => true,
+            'can_export'            => true,
+            'has_archive'           => 'sedes',
+            'exclude_from_search'   => false,
+            'publicly_queryable'    => true,
+            'rewrite'               => $rewrite,
+            'capability_type'       => 'page',
+            'show_in_rest'          => true,
+            'rest_base'             => 'sedes',
+            'rest_controller_class' => 'WP_REST_Posts_Controller',
+        ) );
     
     }
     add_action( 'init', 'cesde_Sedes_custom_post_types', 0 );
