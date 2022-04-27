@@ -19,23 +19,43 @@ function cesde_notices_section_function($atts){
       <?php if($version=='grid'): ?>
         <div class="information_grid">
             <div class="information_content">
+            
             <?php
        // get posts
        $the_query = new WP_Query(array(
         'post_type'			=> 'cesde_noticias',
-        'posts_per_page'	=> -1,
+        'posts_per_page'	=> 3,
         
         'orderby'			=> 'name',
         'order'				=> 'DESC'
     ));
 
         if( $the_query ):
-        while( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                hola
-        <?php
-        endwhile;
-        endif;
-        ?>
+          $count=0;
+        while( $the_query->have_posts() ) : $the_query->the_post(); 
+        if ($count==0) {
+          ?>
+         <div class="left-side">
+          <?php  echo get_template_part( 'inc/template-parts/noticias-block/noticias', 'item'  );?>
+         </div>
+         <div class="right-side">
+          <?php
+        }elseif($count==1){
+          echo get_template_part( 'inc/template-parts/noticias-block/noticias', 'item'  );
+        }elseif($count==2){
+         
+        
+        
+          echo get_template_part( 'inc/template-parts/noticias-block/noticias', 'item'  );
+          echo '</div>';
+        }
+        $count++;
+          ?>
+<?php
+      endwhile;
+    endif;
+    ?>
+            
             </div>
         </div>
         
