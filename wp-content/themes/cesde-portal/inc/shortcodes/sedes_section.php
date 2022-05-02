@@ -29,7 +29,7 @@ function cesde_sedes_section($atts){
     ?>
     <a href="<?php echo get_permalink(); ?>" role="navigation" area-label="sedes enlace" title="<?php echo "ir a sede ". get_sub_field('titulo_de_la_ubicacion'); ?>" class="sede-wrapper">
         <div class="sede-images">
-            <img src="<?php echo get_sub_field('imagen_de_la_sede')['url']; ?>" alt="<?php get_sub_field('titulo_de_la_ubicacion'); ?>">
+            <img src="<?php echo get_sub_field('imagen_de_la_sede')['sizes']['sedes-cover']; ?>" alt="<?php get_sub_field('titulo_de_la_ubicacion'); ?>">
             
         </div>
         <div class="sede-text">

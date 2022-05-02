@@ -60,6 +60,10 @@ html, body {
   color: var(--pink);
 }
 
+div#ajaxsearchliteres1 {
+  z-index: 99999;
+}
+
 .preheader-section {
   background-color: var(--gray-100);
   min-height: 52px;
@@ -108,9 +112,52 @@ html, body {
 }
 .preheader-section .preheader-container .right-section .search-container {
   width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4px;
 }
 .preheader-section .preheader-container .right-section .search-container #closerSearch {
   display: none;
+}
+.preheader-section .preheader-container .right-section .search-container div.asl_w .probox .promagnifier .innericon svg {
+  fill: #706F6F;
+  width: 30px;
+  height: 30px;
+}
+.preheader-section .preheader-container .right-section .search-container div#ajaxsearchlite1 {
+  max-width: 300px;
+}
+.preheader-section .preheader-container .right-section .search-container div.asl_m .probox .proinput input {
+  height: 22px;
+}
+.preheader-section .preheader-container .right-section .search-container #ajaxsearchlite1 .probox, .preheader-section .preheader-container .right-section .search-container div.asl_w .probox {
+  margin: 0;
+  padding: 7px;
+  height: 20px;
+  background-color: #fff;
+  border: none;
+  border-radius: 0 0 0 0;
+  box-shadow: none;
+  border-radius: 30px;
+  padding-top: 4px;
+}
+.preheader-section .preheader-container .right-section .search-container div.asl_w .probox .proclose {
+  margin-top: -2px;
+}
+.preheader-section .preheader-container .right-section .search-container #ajaxsearchlite1 .probox .proinput input, .preheader-section .preheader-container .right-section .search-container div.asl_w .probox .proinput input {
+  font-weight: 500;
+  font-family: Montserrat, sans-serif !important;
+  color: #707070 !important;
+  font-size: 16px;
+  line-height: normal !important;
+  text-shadow: none;
+  border: 0;
+  box-shadow: none;
+}
+.preheader-section .preheader-container .right-section .search-container div.asl_w .probox .promagnifier {
+  margin-top: -3px;
+  margin-right: 8px;
 }
 .preheader-section .preheader-container .right-section .search-container button {
   position: absolute;
