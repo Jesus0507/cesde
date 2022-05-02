@@ -1,0 +1,59 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap-utilities.scss';
+@import '../../../node_modules/bootstrap/scss/bootstrap-grid.scss';
+
+
+:root{
+    --white:#FFFFFF;
+    --gray-100:#424242;
+    --gray-75:#707070;
+    --gray-50:#706F6F;
+    --gray-25:#00000029;
+    --gray-10:#F4F4F4;
+    --blue-light:#65B3D5;
+    --fuchsia-dark:#BB5CD5;
+    --pink:#EE2B7B;
+    --green:#06C5B7;
+    --green-light:#9EF0EA;
+}
+html{
+    overflow-x: hidden;
+}
+.ab-sub-wrapper{
+    background-color: var(--pink);
+}
+.wp-menu-image.dashicons-before img {
+    width: 20px;
+    height: auto;
+    margin: auto;
+}
+#wpadminbar:not(.mobile) .ab-top-menu>li:hover>.ab-item{
+    background-color: var( --fuchsia-dark);
+}
+#wpadminbar .menupop .ab-sub-wrapper, #wpadminbar .shortlink-input{
+    background-color: var(--pink);
+}
+div#wpadminbar,
+ul#adminmenu,
+#adminmenuwrap {
+    background-color: var(--pink);
+    .wp-submenu.wp-submenu-wrap{
+        background-color: var(--pink);
+        li{
+            color: var( --white);
+            &:hover{
+                color: var( --fuchsia-dark);
+            }
+        }
+    }
+}
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu{
+    background-color: var( --fuchsia-dark);
+}
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head, #adminmenu .wp-menu-arrow, #adminmenu .wp-menu-arrow div, #adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+#adminmenu li.menu-top:hover, #adminmenu li.opensub>a.menu-top, #adminmenu li>a.menu-top:focus{
+    background-color: var( --fuchsia-dark);
+    color: var( --white);
+}
+#adminmenu .awaiting-mod, #adminmenu .update-plugins{
+    background-color:var( --green);
+}

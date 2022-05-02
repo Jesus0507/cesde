@@ -1,8 +1,10 @@
-let mix = require('laravel-mix');
+let mix = require("laravel-mix");
 
-
-mix.js('src/js/index.js', 'js/main.js')
-    .sass('src/sass/index.scss','css/main.css')
-    .setPublicPath('assets')
-    .sourceMaps()
-    .version();
+mix
+  .js("src/frontend/js/index.js", "js/main.js")
+  .js("src/admin/js/backoffice.js", "js/back.js")
+  .sass("src/frontend/sass/index.scss", "css/main.css")
+  .sass("src/admin/scss/backoffice.scss", "css/backoffice.css")
+  .setPublicPath("assets")
+  .sourceMaps()
+  .version();
