@@ -1,3 +1,7 @@
+div#ajaxsearchliteres1 {
+    z-index: 99999;
+}
+
 .preheader-section{
     background-color: var(--gray-100);
     min-height:52px;
@@ -42,7 +46,51 @@
                 #closerSearch{
                     display: none;
                 }
+                div.asl_w .probox .promagnifier .innericon svg{
+                    fill:#706F6F;
+                    width: 30px;
+                    height: 30px;
+                    
+                }
                 width: 33%;
+                div#ajaxsearchlite1 {
+                    max-width: 300px;
+                }
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 4px;
+                div.asl_m .probox .proinput input{
+                    height: 22px;
+                }
+                #ajaxsearchlite1 .probox, div.asl_w .probox {
+                    margin: 0;
+                    padding: 7px;
+                    height: 20px;
+                    background-color: #fff;
+                    border: none;
+                    border-radius: 0 0 0 0;
+                    box-shadow: none;
+                    border-radius: 30px;
+                    padding-top: 4px;;
+                }
+                div.asl_w .probox .proclose{
+                    margin-top: -2px;
+                }
+                #ajaxsearchlite1 .probox .proinput input, div.asl_w .probox .proinput input {
+                    font-weight:500;
+                    font-family: Montserrat, sans-serif !important;
+                    color: #707070 !important;
+                    font-size: 16px;
+                    line-height: normal !important;
+                    text-shadow:none;
+                    border: 0;
+                    box-shadow: none;
+                }
+                div.asl_w .probox .promagnifier{
+                    margin-top: -3px;
+                    margin-right: 8px;
+                }
                 button {
                     position: absolute;
                     top: 64%;
