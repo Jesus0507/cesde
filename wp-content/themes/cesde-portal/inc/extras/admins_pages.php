@@ -3,6 +3,7 @@
 require_once __DIR__ . '/admin_pages/info-page.php';
 require_once __DIR__ . '/admin_pages/catalogo_page_escuela.php';
 require_once __DIR__ . '/admin_pages/catalogo_page_sede.php';
+require_once __DIR__ . '/admin_pages/catalogo_page_noticias.php';
 
 /**
  * Register a custom menu page.
@@ -37,6 +38,15 @@ function cesde_admin_page_archive_setting() {
             'configurar_catalogo_sedes', 
             'cesde_catalogo_page_sedes', 
             3 );
+        //cesde_catalogo_page_noticias
+        add_submenu_page( 
+            'configuraciones_cesde', 
+            'Configurar catalogo Noticias', 
+            'Catalogo Noticias', 
+            'manage_options', 
+            'configurar_catalogo_noticias', 
+            'cesde_catalogo_page_noticias', 
+            4 );
 }
 add_action( 'admin_menu', 'cesde_admin_page_archive_setting' );
 

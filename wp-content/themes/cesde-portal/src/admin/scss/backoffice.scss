@@ -1,4 +1,5 @@
 @import '../../../node_modules/bootstrap/scss/bootstrap-utilities.scss';
+@import '../../../node_modules/bootstrap/scss/_forms.scss';
 @import '../../../node_modules/bootstrap/scss/bootstrap-grid.scss';
 
 
@@ -17,6 +18,22 @@
 }
 html{
     overflow-x: hidden;
+}
+body{
+    font-size: 16px !important;
+}
+#image-wrapper{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 20px;
+    background-color: var( --blue-light);
+    margin: 2rem 0 1rem;
+}
+.container-cesde{
+    max-width: 960px;
+    padding: 5rem 1rem;
+    margin: auto;
 }
 .ab-sub-wrapper{
     background-color: var(--pink);
@@ -56,4 +73,100 @@ ul#adminmenu,
 }
 #adminmenu .awaiting-mod, #adminmenu .update-plugins{
     background-color:var( --green);
+}
+.container-cesde{
+    h1,h2,h3,h4{
+        margin: 0;
+        margin-bottom: 1.2em;
+        font-weight: 700;
+        line-height: 1.5rem;
+    }
+    .saving-data {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(255, 255, 255,0.5);
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        transition: 0.5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h2.save-complete {
+            font-size: 3rem;
+            color: var(--green);
+            line-height: 1;
+            margin: 0;
+            animation-name:showing;
+            animation-duration: 2s;
+            animation-iteration-count:infinite;
+        }
+        .saving {
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            border-top: 10px solid var(--pink);
+            border-left: 10px solid transparent;
+            border-bottom: 10px solid var(--pink);
+            border-right: 10px solid transparent;
+            animation-name:rotation;
+            animation-duration: 2s;
+            animation-iteration-count:infinite;
+        }
+        @keyframes showing {
+            0%{
+                opacity: 1;
+            }
+            50%{ opacity: 0.1;}
+            100%{
+                opacity: 1;
+            }
+        }
+        @keyframes rotation {
+            0%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(180deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    }
+    .custom_media_image{
+        max-width: 960px;
+    }
+    h1{
+        font-size: 3rem;
+    }
+    h2{
+        font-size: 2.5rem;
+    }
+    h3{
+        font-size: 2rem;
+
+    }
+    h4{
+        font-size: 1.5rem;
+
+    }
+    p{
+        font-size: 1rem;
+        margin-bottom: 1.2em;
+        line-height: 1em;
+    }
+    p.submit{
+        text-align: center;
+        .wp-core-ui .button-primary{
+            min-width: 250px;
+            font-size: 18px;;
+        }
+    }
+.form-row-margin{
+    border-bottom:1px solid var( --gray-75);
+    margin-bottom: 1.2rem;
+    padding-bottom: 2rem;
+}
 }
