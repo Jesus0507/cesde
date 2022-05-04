@@ -19,11 +19,12 @@ function wpse_remove_parent_theme_locations()
 }
 require_once CESDE_DIR .'/inc/extras/classes/cesde_catalogo_page.php';
 function cesde_localize_paramas(){
-    $sedes = new CesdeCatalogoPage('hola_mundo','$postType');
-   $data = $sedes->init();
+  
     return array(
         'ajaxurl' => admin_url( 'admin-ajax.php' ),
-        'data'=>$data
+        'project_url'=> get_stylesheet_directory_uri(),
+       
+        
     );
 }
 
@@ -41,18 +42,24 @@ function cesde_styles_scripts(){
         VERSION_CESDE
     );
     wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/assets/js/main.js', ['wpbf-site'], VERSION_CESDE, true );
-    
+    wp_localize_script('main','cesde_front_ajax',cesde_localize_paramas());
 }
 //backoffice
 add_action( 'admin_enqueue_scripts', 'cesde_admin_styles_scripts',9999 );
-function cesde_admin_styles_scripts()
+function cesde_admin_styles_scripts($hook_suffix )
 {
+    if ( ! did_action( 'wp_enqueue_media' ) ) {
+        wp_enqueue_media();
+    }
+    if(!did_action('wp-color-picker')){
+        wp_enqueue_style( 'wp-color-picker' );
+    }
     wp_enqueue_style( 'cesde_main', get_stylesheet_directory_uri() . '/assets/css/backoffice.css', 
     array(),  // if the parent theme code has a dependency, copy it to here
     VERSION_CESDE
 );
-    wp_enqueue_script( 'cesde_main', get_stylesheet_directory_uri() . '/assets/js/back.js', ['jquery'], VERSION_CESDE, true );
-    wp_localize_script('cesde_main','cesde_front_ajax',cesde_localize_paramas());
+    wp_enqueue_script( 'cesde_main', get_stylesheet_directory_uri() . '/assets/js/back.js', ['jquery','wp-color-picker'], VERSION_CESDE, true );
+    wp_localize_script('cesde_main','cesde_back_ajax',cesde_localize_paramas());
 }
 //cut excerpt 
 
