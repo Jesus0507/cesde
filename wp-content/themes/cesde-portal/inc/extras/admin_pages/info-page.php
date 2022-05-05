@@ -39,15 +39,15 @@ if(!function_exists('cesde_archives_wp_option_data')){
         $action = $_POST['action'];
       unset($_POST['security'], $_POST["option"],$_POST['action']);
        
-   /*    foreach ( $_POST as $key => &$value ) {
+     foreach ( $_POST as $key => &$value ) {
         $value = sanitize_text_field($value);
-      } */
+      } 
         
         if (check_ajax_referer( 'cesde_archive_config','security' )) {
-            # code...
+      
          $data = serialize($_POST);
            
-       //  $save_content = wp_options( $option,$data );
+  
        $update=update_option($option,$_POST,false);
       wp_send_json_success($update,200);
         }else{

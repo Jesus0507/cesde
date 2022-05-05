@@ -575,6 +575,35 @@ nav#pojo-a11y-toolbar {
   padding: 0 15px;
 }
 
+.header-image {
+  display: block;
+  z-index: 1;
+  position: relative;
+}
+
+.header-text {
+  background: white;
+  display: block;
+  margin: auto;
+  z-index: 10;
+  position: relative;
+  max-width: 1080px;
+  padding: 30px;
+  margin-top: -70px;
+}
+@media (max-width: 1079px) {
+  .header-text {
+    width: 90%;
+  }
+}
+.header-text h1.header-title {
+  font-size: 2.5rem;
+  color: var(--gray-100);
+}
+.header-text .header-text-content {
+  font-size: 18px;
+}
+
 section.banner {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -711,6 +740,68 @@ section.form__section article.form__text {
   background: var(--pink);
   margin-bottom: -13px;
   z-index: 1;
+}
+
+section.escuelas-archive {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 0;
+  display: flex;
+  gap: 6%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+section.escuelas-archive article.escuela-item {
+  overflow: hidden;
+  max-width: 300px;
+}
+section.escuelas-archive article.escuela-item h2.escuela-titulo {
+  text-align: center;
+  font-size: 28px;
+  min-height: 139px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-bottom: 0;
+}
+section.escuelas-archive article.escuela-item a.escuela-wrapper {
+  padding-bottom: 60px;
+  display: block;
+  transition: 0.5s;
+}
+section.escuelas-archive article.escuela-item a.escuela-wrapper .escuela-image img {
+  transition: 0.3s;
+}
+section.escuelas-archive article.escuela-item a.escuela-wrapper .escuela-image:hover img {
+  opacity: 0.7;
+}
+section.escuelas-archive article.escuela-item .escuela-button {
+  position: relative;
+  display: block;
+  margin: auto;
+  max-width: 156px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--white);
+  font-size: 18px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  transition: 0.5s all;
+}
+section.escuelas-archive article.escuela-item .escuela-button .after {
+  -webkit-animation-duration: 2.3s;
+          animation-duration: 2.3s;
+  width: 33px;
+  top: -11px;
+}
+section.escuelas-archive article.escuela-item .escuela-button:hover .after {
+  -webkit-animation-name: example;
+          animation-name: example;
+}
+
+.post-type-archive-cesde_escuelas .calltoaction {
+  margin-bottom: 100px;
+  color: var(--gray-100);
 }
 
 section.programas h4.escuela, .sedes__programas__text h4.escuela {
