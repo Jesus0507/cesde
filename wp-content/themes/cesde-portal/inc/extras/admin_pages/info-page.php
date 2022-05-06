@@ -39,10 +39,10 @@ if(!function_exists('cesde_archives_wp_option_data')){
         $action = $_POST['action'];
       unset($_POST['security'], $_POST["option"],$_POST['action']);
        
-     foreach ( $_POST as $key => &$value ) {
+  /*    foreach ( $_POST as $key => &$value ) {
         $value = sanitize_text_field($value);
       } 
-        
+         */
         if (check_ajax_referer( 'cesde_archive_config','security' )) {
       
          $data = serialize($_POST);
