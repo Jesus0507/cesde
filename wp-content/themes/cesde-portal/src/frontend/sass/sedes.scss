@@ -244,3 +244,83 @@ section.banner__sedes {
         }
     }
 }
+section.sedes-archive {
+    max-width: 1027px;
+    margin: auto;
+    padding: 60px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8%;
+    justify-content: center;
+    .cesde-sede-item-wrapper {
+       
+        .sede-icon img {
+            display: block;
+            margin: auto;
+            width: 90px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        h3.sede-title{
+            color: var(--white);
+            font-size: 24px;
+            font-weight: 500;
+            text-align: center;
+            font-family: 'Montserrat';
+            margin-bottom: 15px;
+        }
+        address.sede-direction {
+            text-align: center;
+            font-style: normal;
+            font-size: 18px;
+            font-weight: 400;
+            font-family: 'Montserrat';
+            margin-bottom: 7px;
+        }
+        p.sede-referencia {
+            font-size: 13px;
+            text-align: center;
+            font-family: 'Montserrat';
+            line-height: 1.5;
+            margin-bottom: 33px;
+        }
+        p.sede-descripcion_adicional {
+            text-align: center;
+            font-size: 18px;
+            line-height: 2;
+        }
+        a{
+            &:hover{
+                color: var(--white);
+            }
+        }
+        &:hover{
+            .sede-text{
+                top: 0;
+            }
+            a{
+                color: var(--white);
+            }
+        }
+        article.sede-item {
+            display: block;
+            margin-bottom: 80px;
+            overflow: hidden;
+            width: 300px;
+            border-radius: 10px;
+            height: 567px;
+            position: relative;
+            border-radius: 10px;
+        }
+        .sede-text {
+            height: 567px;
+            width: 300px;
+            background-color: var(--pink);
+            position: absolute;
+            padding: 20px;
+            top: 570px;
+            transition: 0.5s;
+
+        }
+    }
+}

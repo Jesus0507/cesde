@@ -589,7 +589,6 @@ nav#pojo-a11y-toolbar {
   position: relative;
   max-width: 1080px;
   padding: 30px;
-  margin-top: -70px;
 }
 @media (max-width: 1079px) {
   .header-text {
@@ -602,6 +601,10 @@ nav#pojo-a11y-toolbar {
 }
 .header-text .header-text-content {
   font-size: 18px;
+}
+
+.section-up {
+  margin-top: -70px;
 }
 
 section.banner {
@@ -1201,6 +1204,79 @@ section.banner__sedes .banner__sedes__text .banner__sedes_wrapper .text__subtitl
   margin-bottom: 0;
 }
 
+section.sedes-archive {
+  max-width: 1027px;
+  margin: auto;
+  padding: 60px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8%;
+  justify-content: center;
+}
+section.sedes-archive .cesde-sede-item-wrapper .sede-icon img {
+  display: block;
+  margin: auto;
+  width: 90px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+section.sedes-archive .cesde-sede-item-wrapper h3.sede-title {
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  font-family: "Montserrat";
+  margin-bottom: 15px;
+}
+section.sedes-archive .cesde-sede-item-wrapper address.sede-direction {
+  text-align: center;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Montserrat";
+  margin-bottom: 7px;
+}
+section.sedes-archive .cesde-sede-item-wrapper p.sede-referencia {
+  font-size: 13px;
+  text-align: center;
+  font-family: "Montserrat";
+  line-height: 1.5;
+  margin-bottom: 33px;
+}
+section.sedes-archive .cesde-sede-item-wrapper p.sede-descripcion_adicional {
+  text-align: center;
+  font-size: 18px;
+  line-height: 2;
+}
+section.sedes-archive .cesde-sede-item-wrapper a:hover {
+  color: var(--white);
+}
+section.sedes-archive .cesde-sede-item-wrapper:hover .sede-text {
+  top: 0;
+}
+section.sedes-archive .cesde-sede-item-wrapper:hover a {
+  color: var(--white);
+}
+section.sedes-archive .cesde-sede-item-wrapper article.sede-item {
+  display: block;
+  margin-bottom: 80px;
+  overflow: hidden;
+  width: 300px;
+  border-radius: 10px;
+  height: 567px;
+  position: relative;
+  border-radius: 10px;
+}
+section.sedes-archive .cesde-sede-item-wrapper .sede-text {
+  height: 567px;
+  width: 300px;
+  background-color: var(--pink);
+  position: absolute;
+  padding: 20px;
+  top: 570px;
+  transition: 0.5s;
+}
+
 .opciones-matricula {
   padding: 50px 0;
 }
@@ -1783,10 +1859,12 @@ div#cesde_time_line_container h4.time__line__title {
 }
 .sedes-container article.sede-item .sede-wrapper .sede-text .sede-icon {
   position: relative;
-  top: -47%;
+  top: -39%;
   margin: auto;
   display: inline-block;
-  left: 24%;
+  left: 29%;
+  width: 87px;
+  margin-bottom: 27px;
 }
 .sedes-container article.sede-item .sede-wrapper .sede-text h3.sede-title {
   color: var(--pink);
@@ -1811,6 +1889,9 @@ div#cesde_time_line_container h4.time__line__title {
   font-weight: 300;
   margin-top: 11px;
   font-family: "Montserrat";
+}
+.sedes-container article.sede-item .sede-wrapper .sede-text .sede-descripcion_adicional {
+  display: none;
 }
 
 .after {

@@ -85,8 +85,8 @@
                           $content   =  $option_data['meta_content_editor']!=''?$option_data['meta_content_editor']:'' ;
         
                             wp_editor($content, 'meta_content_editor', array(
-                                    'wpautop'               =>  true,
-                                    'media_buttons' =>      false,
+                                    'wpautop'               => true,
+                                    'media_buttons' =>      true,
                                     'textarea_name' =>      'meta_content_editor',
                                     'textarea_rows' =>      10,
                                     'teeny'                 =>  true
@@ -97,11 +97,11 @@
                         <div class="row form-row-margin justify-content-center align-items-center">
                         <div class="col-8">
                         <h3  style="text-align:center" >  Sección "Call to action" </h3>
-                            <label for="template_section" class="form-label" style="display:block;">Agregar elementor shortcode template "Plantillas>Plantillas guardadas" </label>
+                            <label for="template_section" class="form-label" style="display:block;">Agregar elementor shortcode template "Plantillas>Plantillas guardadas" <br> "Shortcode" tomar el id del template = [elementor-template id="<b><u>528</u></b>"] </label>
                             <?php
                             $template = $option_data['template_section']!=''?$option_data['template_section']:'';
                             ?>
-                                    <input type="text" class="form-control" id="template_section" value="<?php echo $template;?>" placeholder='[elementor-template id="408"]'>
+                                    <input type="text" class="form-control" id="template_section" value="<?php echo $template;?>" placeholder='408'>
                         </div>
                         </div>
                         <div class="row d-flex justify-content-center align-items-center">
