@@ -38,7 +38,7 @@ function cesde_function_time_line($atts){
                               <?php  echo get_field('titulo_del_evento'); ?>
                             </h4>
                             <div class="time__line__icon">
-                                <img src=" <?php  echo get_field('icono_de_tiempo')['url']; ?>" alt=" <?php  echo  get_the_title(); ?>">
+                                <img loading="lazy" src=" <?php  echo get_field('icono_de_tiempo')['url']; ?>" alt=" <?php  echo  get_the_title(); ?>">
                             </div>
                        </div>
                        <div class="time__line__content">
@@ -52,7 +52,7 @@ function cesde_function_time_line($atts){
                                     $image_height = $featured_img[2];
                                     
                                    ?>
-                                   <img src="<?php echo  $image_url; ?>" alt="<?php echo  get_field('titulo_del_evento'); ?>">
+                                   <img loading="lazy" src="<?php echo  $image_url; ?>" alt="<?php echo  get_field('titulo_del_evento'); ?>">
                                 </div>
                                 <div class="time__line__content__text">
                                     <div class="text">

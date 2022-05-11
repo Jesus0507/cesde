@@ -14,22 +14,41 @@ $section_up = $header_data['front_image']!==''?'section-up':'';
              $alt = $image[3]!=''? $image[3]: $header_data['titulo'];
    ?>
     <div class="header-image">
-        <img src="<?php echo $image_url; ?>" alt="<?php echo $alt; ?>"  width="<?php echo   $image_width; ?>"  height="<?php echo   $image_height; ?>">
+        <img loading="lazy" src="<?php echo $image_url; ?>" alt="<?php echo $alt; ?>"  width="<?php echo   $image_width; ?>"  height="<?php echo   $image_height; ?>">
     </div>
    <?php
    endif;
    ?>
     <div class="header-text <?php echo $section_up;?>" >
-        <h1 style="color:<?php echo $header_data['color_editor'];?>;" class="header-title">
-            <?php echo $header_data['titulo']; ?>
-        </h1>
+   
+        <?php if ( is_tax()) : 
+            $taxonomy =  get_queried_object();
+            $color = get_field('color_de_la_categoria', $taxonomy );
+           
+            ?>
+            <h1 style="color:<?php echo  $color;?>;" class="header-title">
+                <?php echo $taxonomy->name;  ?>
+            </h1>
+        <?php else: ?>
+                <h1 style="color:<?php echo $header_data['color_editor'];?>;" class="header-title">
+                    <?php echo $header_data['titulo']; ?>
+                </h1>
+        <?php endif;?>
+        
         <div class="header-text-content">
-            <?php echo  str_replace(
+            
+            <?php 
+             if ( is_tax()) :
+             echo  $taxonomy->description; 
+             else:
+            echo  str_replace(
     '\"',
     '',
     $header_data['meta_content_editor'],
     
-            ); ?>
+            ); 
+        endif;
+            ?>
         </div>
     </div>
 </header> 

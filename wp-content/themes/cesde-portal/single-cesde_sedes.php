@@ -35,9 +35,9 @@ while ( have_posts() ) : the_post();
            
              if($featured_img['url']){
                  $alt = $featured_img['alt']!=''?$featured_img['alt']: get_the_title();
-                 echo '<img src="'.$featured_img['url'] .'" width="'. $featured_img['width'].' height="'. $featured_img['height'].'" alt="'.$alt.'" />';
+                 echo '<img loading="lazy" src="'.$featured_img['url'] .'" width="'. $featured_img['width'].' height="'. $featured_img['height'].'" alt="'.$alt.'" />';
              }else{
-                 echo '<img src="'.$image_url .'" alt="'.get_bloginfo('name').' - '. get_the_title() .'" />';
+                 echo '<img loading="lazy" src="'.$image_url .'" alt="'.get_bloginfo('name').' - '. get_the_title() .'" />';
              }
     
         ?>

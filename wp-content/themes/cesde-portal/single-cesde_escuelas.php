@@ -62,9 +62,9 @@ echo '</div>';
                     $image_height = $image[2];
                   
                     if($featured_img['url']){
-                        echo '<img src="'.$featured_img['url'] .'" width="'. $featured_img['width'].' height="'. $featured_img['height'].'" alt="'.$featured_img['alt'].'" />';
+                        echo '<img loading="lazy" src="'.$featured_img['url'] .'" width="'. $featured_img['width'].' height="'. $featured_img['height'].'" alt="'.$featured_img['alt'].'" />';
                     }else{
-                        echo '<img src="'.$image_url .'" alt="'.get_bloginfo('name').' - '. get_the_title() .'" />';
+                        echo '<img loading="lazy" src="'.$image_url .'" alt="'.get_bloginfo('name').' - '. get_the_title() .'" />';
                         
                     }
                     ?>

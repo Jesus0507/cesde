@@ -66,7 +66,17 @@ function cesde_admin_styles_scripts($hook_suffix )
 function cesde_custom_excerpts($limit) {
     return wp_trim_words(get_the_excerpt(), $limit, '...');
 }
-   
+if( !is_admin() ){  
+    add_action( 'pre_get_posts',  'set_per_page'  );
+}
+function set_per_page( $query ) {
+    global $wp_the_query;
+    if($query->is_post_type_archive('cesde_noticias')&&($query === $wp_the_query)){
+    $query->set( 'posts_per_page', 1);
+    }
+  return $query;
+} 
+
 //includes
     require_once __DIR__ . '/inc/post-types/post-types.php';
     require_once __DIR__ . '/inc/extras/breadcumb.php';

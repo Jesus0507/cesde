@@ -36,17 +36,37 @@ function cesde_notices_section_function($atts){
         if ($count==0) {
           ?>
          <div class="left-side">
-          <?php  echo get_template_part( 'inc/template-parts/noticias-block/noticias', 'item'  );?>
+         
+          <?php   
+          set_query_var( 'notices_item_settings', [
+            'title'=>true,
+            'excerpt'=>true,
+            'link'=>true,
+            'desing'=>1
+          ]    );
+          get_template_part( 'inc/template-parts/noticias-block/noticias', 'item');?>
          </div>
          <div class="right-side">
           <?php
         }elseif($count==1){
-          echo get_template_part( 'inc/template-parts/noticias-block/noticias', 'item'  );
+          set_query_var( 'notices_item_settings', [
+            'title'=>true,
+            'excerpt'=>false,
+            'link'=>false,
+            'desing'=>1
+          ]    );
+           
+         get_template_part( 'inc/template-parts/noticias-block/noticias', 'item');
         }elseif($count==2){
-         
+          set_query_var( 'notices_item_settings', [
+            'title'=>true,
+            'excerpt'=>false,
+            'link'=>false,
+            'desing'=>1
+          ]    );
         
         
-          echo get_template_part( 'inc/template-parts/noticias-block/noticias', 'item'  );
+          get_template_part( 'inc/template-parts/noticias-block/noticias', 'item');
           echo '</div>';
         }
         $count++;
@@ -59,27 +79,7 @@ function cesde_notices_section_function($atts){
             </div>
         </div>
         
-      <?php
-        else:
-            ?>
-         
-         <?php
-       // get posts
-       $the_query = new WP_Query(array(
-        'post_type'			=> 'cesde_noticias',
-        'posts_per_page'	=> -1,
-        
-        'orderby'			=> 'name',
-        'order'				=> 'DESC'
-    ));
-
-        if( $the_query ):
-        while( $the_query->have_posts() ) : $the_query->the_post(); ?>
-        <?php
-        endwhile;
-        endif;
-        ?>
-
+       
 
       <?php
       wp_reset_postdata();
