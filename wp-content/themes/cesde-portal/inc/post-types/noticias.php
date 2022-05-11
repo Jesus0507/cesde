@@ -5,7 +5,7 @@ if ( ! function_exists('custom_noticias_post') ) {
     function custom_noticias_post() {
     
         $labels = array(
-            'name'                  => _x( 'Noticas', 'Post Type General Name', 'cesde_portal' ),
+            'name'                  => _x( 'Noticias', 'Post Type General Name', 'cesde_portal' ),
             'singular_name'         => _x( 'Noticia', 'Post Type Singular Name', 'cesde_portal' ),
             'menu_name'             => __( 'Noticias', 'cesde_portal' ),
             'name_admin_bar'        => __( 'Noticias', 'cesde_portal' ),
@@ -41,7 +41,7 @@ if ( ! function_exists('custom_noticias_post') ) {
         );
         $args = array(
             'label'                 => __( 'Noticia', 'cesde_portal' ),
-            'description'           => __( 'Noticas de nuestras escuelas y sede', 'cesde_portal' ),
+            'description'           => __( 'Noticias de nuestras escuelas y sede', 'cesde_portal' ),
             'labels'                => $labels,
             'supports'              => array( 'title', 'editor', 'thumbnail', 'revisions', 'custom-fields', 'page-attributes', 'post-formats' ),
             'taxonomies'            => array( 'notice_taxonomy' ),

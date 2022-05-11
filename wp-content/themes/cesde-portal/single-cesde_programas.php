@@ -35,9 +35,9 @@ while (have_posts() ) : the_post();
              $image_height = $image[2];
            
              if($featured_img[0]){
-                 echo '<img src="'.$featured_img[0] .'" width="'. $featured_img[1].' height="'. $featured_img[2].'" alt="'.$featured_img[3].'" />';
+                 echo '<img loading="lazy" src="'.$featured_img[0] .'" width="'. $featured_img[1].' height="'. $featured_img[2].'" alt="'.$featured_img[3].'" />';
              }else{
-                 echo '<img src="'.$image_url .'" alt="'.get_bloginfo('name').' - '. get_the_title() .'" />';
+                 echo '<img loading="lazy" src="'.$image_url .'" alt="'.get_bloginfo('name').' - '. get_the_title() .'" />';
              }
     
         ?>

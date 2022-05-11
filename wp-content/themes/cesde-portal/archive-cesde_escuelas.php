@@ -43,9 +43,9 @@ while ( have_posts() ) : the_post();
    </section> 
   <?php 
   ///template-calltoaction.php
-  if($escuela_data['template_section']){
+  if($header_data['template_section']){
       $arg = [
-          'template'=> $escuela_data['template_section'] 
+          'template'=> $header_data['template_section'] 
         ];
       get_template_part( 'inc/template-parts/general/template', 'calltoaction',  $arg );
   }

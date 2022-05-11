@@ -24,7 +24,6 @@ $header_data = get_option( 'cesde_noticias_config' );
 get_template_part( 'inc/template-parts/general/general', 'header',$header_data  );
 get_template_part( 'inc/template-parts/noticias-block/noticias', 'loop'  );
 ?>
-
  <?php    
   ///template-calltoaction.php
   if($header_data['template_section']){

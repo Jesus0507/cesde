@@ -20,7 +20,7 @@
             <?php
             if($featured_img[0]):
             ?>
-            <img src="<?php echo $featured_img[0];?>"   alt="<?php echo get_the_title(); ?>" />
+            <img loading="lazy" src="<?php echo $featured_img[0];?>"   alt="<?php echo get_the_title(); ?>" />
             <?php
             endif;
             ?>

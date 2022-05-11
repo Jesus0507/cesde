@@ -27,7 +27,7 @@ function function_cesde_get_slider( $atts ) {
       <div class="swiper-lazy-preloader"></div>
                 */
                 echo '<div class="swiper-slide">';
-                echo '<img src="'.$image['sizes']['large'].'" alt="'.$image['alt'].'" class="swiper-lazy" style="width:100%;" >';
+                echo '<img loading="lazy" src="'.$image['sizes']['large'].'" alt="'.$image['alt'].'" class="swiper-lazy" style="width:100%;" >';
              
                 echo '</div>';
             endforeach;
