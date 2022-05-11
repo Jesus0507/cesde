@@ -1,6 +1,6 @@
 <div class="nav-preheader-component">
     <button id="preheader-button">
-	Matricúlate &nbsp; <i class="fa-solid fa-caret-down"></i> 
+	Menú &nbsp; <i class="fa-solid fa-caret-down"></i> 
 	</button>
     <nav id="preheader-navigation" 
         itemscope="itemscope" 
