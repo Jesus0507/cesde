@@ -8,6 +8,11 @@
     margin: auto;
     display: block;
 }
+.catalogo-section img {
+    min-height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
 .header-text {
     background: white;
     display: block;
@@ -19,6 +24,7 @@
    
     @media (max-width:1079px) {
         width: 90%;
+
     }
     h1.header-title {
         font-size: 2.5rem;
