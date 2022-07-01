@@ -27,15 +27,18 @@ while (have_posts() ) : the_post();
 <section class="banner__sedes"  area-label="banner">
     <div class="banner__sedes__image">
         <?php
-             $featured_img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full', true );
+            // $featured_img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full', true );
+            $featured_img = get_field('imagen_banner');
              $logo = get_theme_mod( 'custom_logo' );
              $image = wp_get_attachment_image_src( $logo , 'full' );
              $image_url = $image[0];
              $image_width = $image[1];
              $image_height = $image[2];
            
-             if($featured_img[0]){
-                 echo '<img loading="lazy" src="'.$featured_img[0] .'" width="'. $featured_img[1].' height="'. $featured_img[2].'" alt="'.$featured_img[3].'" />';
+             if($featured_img){
+                 //var_dump( $featured_img);
+                 $alt= $featured_img['alt']?$featured_img['alt']:get_the_title();
+                 echo '<img loading="lazy" src="'.$featured_img['url'] .'" width="'. $featured_img['width'].' height="'. $featured_img['height'].'" alt="'. $alt.'" />';
              }else{
                  echo '<img loading="lazy" src="'.$image_url .'" alt="'.get_bloginfo('name').' - '. get_the_title() .'" />';
              }

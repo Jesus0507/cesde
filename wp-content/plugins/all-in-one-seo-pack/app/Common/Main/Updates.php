@@ -148,6 +148,18 @@ class Updates {
 			$this->removeRevisionRecords();
 		}
 
+		if ( version_compare( $lastActiveVersion, '4.0.0', '>=' ) && version_compare( $lastActiveVersion, '4.2.0', '<' ) ) {
+			$this->migrateDeprecatedRunShortcodesSetting();
+		}
+
+		if ( version_compare( $lastActiveVersion, '4.2.1', '<' ) ) {
+			// Force WordPress to flush the rewrite rules.
+			aioseo()->options->flushRewriteRules();
+
+			Models\Notification::deleteNotificationByName( 'deprecated-filters' );
+			Models\Notification::deleteNotificationByName( 'deprecated-filters-v2' );
+		}
+
 		do_action( 'aioseo_run_updates', $lastActiveVersion );
 	}
 
@@ -785,5 +797,23 @@ class Updates {
 				AND `post_status` = 'inherit'
 			)"
 		);
+	}
+
+	/**
+	 * Enables the new shortcodes parsing setting if it was already enabled before as a deprecated setting.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @return void
+	 */
+	private function migrateDeprecatedRunShortcodesSetting() {
+		if (
+			in_array( 'runShortcodesInDescription', aioseo()->internalOptions->deprecatedOptions, true ) &&
+			! aioseo()->options->deprecated->searchAppearance->advanced->runShortcodesInDescription
+		) {
+			return;
+		}
+
+		aioseo()->options->searchAppearance->advanced->runShortcodes = true;
 	}
 }

@@ -4,32 +4,35 @@ function cesde_cat_escuelas($atts){
     ?>
     <section class="escuelas-cat-show" area-label="navigation">
         <?php
-        
-        $terms = get_terms( array(
-            'taxonomy' => 'cesde_programas_taxonomy',
-            'hide_empty' => true,
-          ) );
-          foreach ($terms as $term){
-            $term_link = get_term_link( $term );
-            $color = get_field('color_de_la_categoria_de_la_etiqueta', $term);
-          ?>
-          <article class="escuela-tax-container" <?php echo 'style="background:'. $color.';"'; ?>  >
-              <a href="<?php echo $term_link;?>"  class="escuela-tax-wrapper">
+          $the_query = new WP_Query(array(
+            'post_type'			=> 'cesde_escuelas',
+            'posts_per_page'	=> -1,
+          
+            'orderby'			=>  array( 'title' => 'ASC'),
+            'order'				=> 'ASC'
+        ));
+
+            if( $the_query ):
+            while( $the_query->have_posts() ) : $the_query->the_post(); 
+            $color = get_field('color_de_la_escuela')?'style="background:'. get_field('color_de_la_escuela').';"':'style="background:#BB5CD5;"';
+            ?> 
+             <article class="escuela-tax-container" <?php echo  $color; ?>  >
+              <a href="<?php echo get_the_permalink( );?>"  class="escuela-tax-wrapper">
                   <h3 class="category-name">
                       <?php
-                            echo $term->name;
+                            echo get_the_title();
                         ?>
               </h3>
-              <div class="link-indicator"><i  <?php echo 'style="background:'. $color.';"'; ?> class="fa fa-arrow-right"></i></div>
+              <div class="link-indicator"><i  <?php echo $color; ?> class="fa fa-arrow-right"></i></div>
   
               </a>
               <div class="after"></div>
           </article>
-          <?php
-          }
-        ?>
-
-      
+            <?php
+            endwhile;
+            wp_reset_postdata();
+            endif;
+            ?>
     </section>
     <?php
     return ob_get_clean();

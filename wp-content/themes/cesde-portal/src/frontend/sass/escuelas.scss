@@ -204,3 +204,14 @@ section.escuelas-archive {
         color: var(--gray-100);
     }
 }
+.noticias-section-escuelas {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px;
+    flex-wrap: wrap;
+    border-bottom: 3px solid var(--pink);
+    article.noticias-item{
+        max-width:360px;
+    }
+}

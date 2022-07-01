@@ -57,6 +57,41 @@ if(cesde_time_line_container){
         }
       })
 }
+if(document.getElementById('sedes-swiper')){
+  const sedesHomeSwiper = new Swiper('#sedes-swiper',{
+    modules: [Navigation],
+      navigation: {
+        nextEl: '.sedes-button-next',
+        prevEl: '.sedes-button-prev',
+      },
+      slidesPerView: 5,
+     
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is >= 320px
+      
+        0: {
+          slidesPerView: 1,
+         
+        },
+        768:{
+          slidesPerView: 2,
+        },
+        991:{
+          slidesPerView: 3,
+        },
+        // when window width is >= 640px
+        1020: {
+          slidesPerView: 4,
+          
+        },
+        1200: {
+          slidesPerView: 5,
+          
+        }
+      }
+    })
+}
 
 if(calendarHomeWrapper){
   const calendarSimpleScroll = new SimpleBar(document.getElementById('calender-home-content'),{

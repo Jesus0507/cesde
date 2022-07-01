@@ -258,6 +258,7 @@ section.sedes-archive {
             display: block;
             margin: auto;
             width: 90px;
+            height:90px;
             margin-top: 10px;
             margin-bottom: 20px;
         }
@@ -289,6 +290,11 @@ section.sedes-archive {
             font-size: 18px;
             line-height: 2;
         }
+        .sede-icon {
+            overflow: hidden;
+            height: 0;
+            transition:0.5s;
+        }
         a{
             &:hover{
                 color: var(--white);
@@ -300,6 +306,10 @@ section.sedes-archive {
             }
             a{
                 color: var(--white);
+            }
+            .sede-icon {
+                overflow: hidden;
+                height: 100px;
             }
         }
         article.sede-item {
@@ -314,12 +324,49 @@ section.sedes-archive {
         }
         .sede-text {
             height: 567px;
-            width: 300px;
+            width: 301px;
             background-color: var(--pink);
             position: absolute;
             padding: 20px;
-            top: 570px;
+            top: 506px;
             transition: 0.5s;
+
+
+        }
+    }
+}
+section.cesde_address_list{
+    
+        max-width: 380px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding: 0 15px;
+    
+    article.cesde__direction a {
+        display: grid;
+        grid-template-columns: 75px auto;
+        gap: 30px;
+       
+        h3{
+            color:var(--pink);
+            font-style: normal;
+            margin-bottom: 5px;
+            font-weight: 700;
+            
+        }
+        .address{
+            font-weight: 500;
+        }
+        p{
+            font-style: normal;
+            margin-bottom: 0px;
+            line-height: 1.2;
+            color: var(--gray-100);
+            font-weight: 400;
 
         }
     }

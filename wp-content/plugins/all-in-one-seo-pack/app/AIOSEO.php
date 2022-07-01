@@ -272,6 +272,9 @@ namespace AIOSEO\Plugin {
 			$version = strtolower( getenv( 'VITE_VERSION' ) );
 			if ( ! empty( $version ) ) {
 				$this->isDev = true;
+
+				// Fix SSL certificate invalid in our local environments.
+				add_filter( 'https_ssl_verify', '__return_false' );
 			}
 
 			if ( $proDir && 'pro' === $version ) {
@@ -338,6 +341,18 @@ namespace AIOSEO\Plugin {
 		}
 
 		/**
+		 * To prevent errors and bugs from popping up,
+		 * we will run this backwards compatibility method.
+		 *
+		 * @since 4.2.0
+		 *
+		 * @return void
+		 */
+		private function backwardsCompatibilityLoad() {
+			$this->postSettings->integrations = $this->standalone->pageBuilderIntegrations;
+		}
+
+		/**
 		 * Load our classes.
 		 *
 		 * @since 4.0.0
@@ -365,8 +380,8 @@ namespace AIOSEO\Plugin {
 			$this->helpers            = $this->pro ? new Pro\Utils\Helpers() : new Common\Utils\Helpers();
 			$this->addons             = $this->pro ? new Pro\Utils\Addons() : new Common\Utils\Addons();
 			$this->tags               = $this->pro ? new Pro\Utils\Tags() : new Common\Utils\Tags();
+			$this->blocks             = new Common\Utils\Blocks();
 			$this->badBotBlocker      = new Common\Tools\BadBotBlocker();
-			$this->headlineAnalyzer   = new Common\HeadlineAnalyzer\HeadlineAnalyzer();
 			$this->breadcrumbs        = $this->pro ? new Pro\Breadcrumbs\Breadcrumbs() : new Common\Breadcrumbs\Breadcrumbs();
 			$this->dynamicBackup      = $this->pro ? new Pro\Options\DynamicBackup() : new Common\Options\DynamicBackup();
 			$this->options            = $this->pro ? new Pro\Options\Options() : new Lite\Options\Options();
@@ -387,13 +402,14 @@ namespace AIOSEO\Plugin {
 			$this->admin              = $this->pro ? new Pro\Admin\Admin() : new Lite\Admin\Admin();
 			$this->activate           = $this->pro ? new Pro\Main\Activate() : new Common\Main\Activate();
 			$this->conflictingPlugins = $this->pro ? new Pro\Admin\ConflictingPlugins() : new Common\Admin\ConflictingPlugins();
-			$this->limitModifiedDate  = new Common\Admin\LimitModifiedDate();
 			$this->migration          = $this->pro ? new Pro\Migration\Migration() : new Common\Migration\Migration();
 			$this->importExport       = $this->pro ? new Pro\ImportExport\ImportExport() : new Common\ImportExport\ImportExport();
 			$this->sitemap            = $this->pro ? new Pro\Sitemap\Sitemap() : new Common\Sitemap\Sitemap();
 			$this->htmlSitemap        = new Common\Sitemap\Html\Sitemap();
 			$this->templates          = new Common\Utils\Templates();
+			$this->categoryBase       = $this->pro ? new Pro\Main\CategoryBase() : null;
 			$this->postSettings       = $this->pro ? new Pro\Admin\PostSettings() : new Lite\Admin\PostSettings();
+			$this->standalone         = new Common\Standalone\Standalone;
 
 			if ( ! wp_doing_ajax() && ! wp_doing_cron() ) {
 				$this->rss       = new Common\Rss();
@@ -403,9 +419,10 @@ namespace AIOSEO\Plugin {
 				$this->filters   = $this->pro ? new Pro\Main\Filters() : new Lite\Main\Filters();
 				$this->dashboard = $this->pro ? new Pro\Admin\Dashboard() : new Common\Admin\Dashboard();
 				$this->api       = $this->pro ? new Pro\Api\Api() : new Lite\Api\Api();
-				$this->filter    = new Common\Utils\Filter();
 				$this->help      = new Common\Help\Help();
 			}
+
+			$this->backwardsCompatibilityLoad();
 
 			if ( wp_doing_ajax() || wp_doing_cron() ) {
 				return;

@@ -18,7 +18,7 @@
         {
             //cesde_sedes_config
            $option = $this->wrapper;
-           $option_data = get_option($option);
+           $option_data = get_option($option)?get_option($option):array('front_image'=>false,'titulo'=>'','meta_content_editor'=>'','color_editor'=>'#000','template_section'=>'');
            $action = 'cesde_archive_config';
            $security = wp_create_nonce('cesde_archive_config');
           

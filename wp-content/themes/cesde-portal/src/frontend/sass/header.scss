@@ -16,7 +16,7 @@ div#ajaxsearchliteres1 {
             justify-content: space-between;
             margin: auto;
             max-width: 1300px;
-            grid-template-columns: 20% 70%;
+            grid-template-columns: auto 75%;
             gap: 20px;
             width: 100%;
             a{
@@ -258,6 +258,7 @@ nav#desktop-navigation ul {
     max-width: 1300px;
     margin: auto;
     align-items: center;
+    padding: 0 10px;
 }
 .header-desktop{
     display: flex;

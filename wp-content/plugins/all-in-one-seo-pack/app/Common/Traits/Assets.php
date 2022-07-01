@@ -129,7 +129,7 @@ trait Assets {
 	 * @param  string $asset The script to load CSS for.
 	 * @return void
 	 */
-	private function loadCss( $asset ) {
+	public function loadCss( $asset ) {
 		if ( $this->shouldLoadDev() ) {
 			return;
 		}
@@ -345,8 +345,16 @@ trait Assets {
 			return $file;
 		}
 
-		$content = $this->core->fs->getContents( $this->manifestFile );
-		$file    = json_decode( $content, true );
+		// Required for local business 1.2.5.
+		if ( preg_match( '/\.json$/', $this->manifestFile ) ) {
+			$content = $this->core->fs->getContents( $this->manifestFile );
+			$file    = json_decode( $content, true );
+
+			return $file;
+		}
+
+		require( $this->manifestFile );
+		$file = json_decode( $manifestJson, true ); // phpcs:ignore VariableAnalysis.CodeAnalysis.VariableAnalysis.UndefinedVariable
 
 		return $file;
 	}
@@ -364,8 +372,16 @@ trait Assets {
 			return $file;
 		}
 
-		$content = $this->core->fs->getContents( $this->assetManifestFile );
-		$file    = json_decode( $content, true );
+		// Required for local business 1.2.5.
+		if ( preg_match( '/\.json$/', $this->assetManifestFile ) ) {
+			$content = $this->core->fs->getContents( $this->assetManifestFile );
+			$file    = json_decode( $content, true );
+
+			return $file;
+		}
+
+		require( $this->assetManifestFile );
+		$file = json_decode( $manifestJson, true ); // phpcs:ignore VariableAnalysis.CodeAnalysis.VariableAnalysis.UndefinedVariable
 
 		return $file;
 	}
@@ -443,7 +459,13 @@ trait Assets {
 			return $this->shouldLoadDevScripts;
 		}
 
-		if ( ! $this->isDev ) {
+		if (
+			! $this->isDev ||
+			(
+				defined( 'AIOSEO_LOAD_DEV_SCRIPTS' ) &&
+				false === AIOSEO_LOAD_DEV_SCRIPTS
+			)
+		) {
 			$this->shouldLoadDevScripts = false;
 
 			return $this->shouldLoadDevScripts;

@@ -29,6 +29,10 @@ $section_up = $header_data['front_image']!==''?'section-up':'';
             <h1 style="color:<?php echo  $color;?>;" class="header-title">
                 <?php echo $taxonomy->name;  ?>
             </h1>
+        <?php elseif(is_archive(  ) &&  $header_data['titulo']==''): ?>
+            <h1 style="color:<?php echo  $color;?>;" class="header-title">
+                <?php echo get_the_archive_title();  ?>
+            </h1>
         <?php else: ?>
                 <h1 style="color:<?php echo $header_data['color_editor'];?>;" class="header-title">
                     <?php echo $header_data['titulo']; ?>
@@ -38,16 +42,14 @@ $section_up = $header_data['front_image']!==''?'section-up':'';
         <div class="header-text-content">
             
             <?php 
-             if ( is_tax()) :
-             echo  $taxonomy->description; 
-             else:
+          
             echo  str_replace(
     '\"',
     '',
     $header_data['meta_content_editor'],
     
             ); 
-        endif;
+       
             ?>
         </div>
     </div>

@@ -156,3 +156,142 @@ a.opcion-llamada {
         }
     }
 } 
+
+/*
+aarchivo programas
+*/
+section.sedes-list {
+    padding: 15px;
+    max-width: 1080px;
+    margin: auto;
+    margin-bottom:50px;
+    .sedes-oferta-list{
+        display:flex;
+        justify-content: center;
+        gap:10px;
+        flex-wrap: wrap;
+        button {
+            background: var(--pink);
+            color: white;
+            width: 100%;
+            padding: 7px;
+            font-weight: 700;
+            transition:0.3s;
+            cursor:pointer;
+            &:active,&:hover,&:focus{
+                filter: grayscale(1);
+            }
+            @media (min-width:768px) and (max-width:991px) {
+              max-width: 32%;
+                
+            }
+            @media (min-width:992px) and (max-width:1079px) {
+                max-width: 24%;
+                  
+              }
+              @media (min-width:1080px)  {
+                max-width: 19%;
+                  
+              }
+            
+        }
+        @media (max-width:767px) {
+            flex-direction: column;
+            
+            button {
+                width: 100%;
+            }
+        }
+    }
+}
+section#nuestros-programas {
+    max-width: 1080px;
+    margin: auto;
+    padding: 40px 0px;
+    gap: 10px;
+    width: 98%;
+   justify-content: space-between;
+    display:flex;
+    flex-wrap: wrap;
+    .programa-category h5 {
+        font-size: 0.8rem;
+        font-weight: 400;
+        padding: 4px;
+        text-align: center;
+        border-radius: 30px;
+        /* margin-top: -19px; */
+        z-index: 9999;
+        /* border-bottom-right-radius: 30px; */
+        position: relative;
+        top: -13px;
+        margin-bottom: -6px;
+        min-height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media (max-width:767px) {
+            font-size: 0.7rem;
+        }
+    }
+    h2.programa-title {
+        font-size: 20px;
+        min-height:80px;
+        padding:0 10px;
+  @media(max-width:767px){
+        font-size: 18px;
+    }
+  }
+  .programa-item{
+      transition: 0.3s;
+      background:var( --gray-10);
+      margin-bottom:15px;
+    .ver-mas {
+        transition: 0.3s;
+        padding: 5px 10px;
+        color: white;
+        background: var(--pink);
+        text-align: center;
+        max-width: 70%;
+        margin: auto;
+        margin-bottom: 20px;
+        font-size: 22px;
+        font-weight: 700;
+    }
+    h2.programa-title {
+        text-align: center;
+    }
+    &:hover{
+        .ver-mas{
+            filter:grayscale(1);
+        }
+    }
+        width: 32%;
+        @media (max-width:991px) {
+            width: 46%;
+        }
+    }
+}
+.banner__sedes__image:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--gray-100);
+    top: 0;
+    content: '';
+    left: 0;
+    opacity: 0.4;
+}
+.banner__sedes_wrapper {
+    color: white;
+    h1{
+        color: white;
+    }
+}
+footer{
+    @media(max-width:767px){
+        .elementor-top-column{
+            width: 100% !important;
+        }
+    }
+
+}

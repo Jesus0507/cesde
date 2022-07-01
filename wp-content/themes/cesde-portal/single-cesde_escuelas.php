@@ -202,16 +202,53 @@ echo '</div>';
                </div>
                <?php
                endif;
+            endwhile;
+            wp_reset_postdata();
                ?>
                <h3 class="information__subtitle"> <span>Todas las noticias</span> </h3>
+               <div class="noticias-section-escuelas">
+                 
+               <?php
+       // get posts
+       $the_query = new WP_Query(array(
+        'post_type'			=> 'cesde_noticias',
+        'posts_per_page'	=> 3,
+        'tax_query' =>
+               array(
+                array(
+                    'taxonomy' => 'programa_taxonomy',
+                    'field' => 'slug',
+                    'terms' => $post->post_name,
+                    )
+               ),   
+              
+        'orderby'			=> 'name',
+        'order'				=> 'DESC'
+    ));
+
+        if( $the_query ):
+          $count=0;
+        while( $the_query->have_posts() ) : $the_query->the_post(); 
+        set_query_var( 'notices_item_settings', [
+            'title'=>true,
+            'excerpt'=>true,
+            'link'=>true,
+            'desing'=>1
+          ]    );
+          get_template_part( 'inc/template-parts/noticias-block/noticias', 'item');
+        endwhile;
+        wp_reset_postdata();
+    endif;
+          ?>
+               </div>
             </section>
            <?php 
           
          
            
-        endwhile;
+      
     
-        wp_reset_postdata(); 
+     
         ?>
     </main>
 </div>

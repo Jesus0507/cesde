@@ -31,7 +31,7 @@ if (document.getElementById('valores__wrapper')) {
         slide('left','#valores__wrapper')
     })    
 }
-if(showSedes){
+/* if(showSedes){
     document.getElementById('sedesRight').addEventListener('click',()=>{
         console.log('first')
         slide('right','.sedes-content')
@@ -42,4 +42,5 @@ if(showSedes){
         slide('left','.sedes-content')
     })   
 }
+ */
 

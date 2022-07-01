@@ -20,16 +20,19 @@ get_header();
 echo '<div class="sedes-breadcumb">';
 bcn_display($return = false, $linked = true, $reverse = false, $force = false);
 echo '</div>';
-  
-while ( have_posts() ) : the_post(); 
+$header_data = get_option( 'cesde_programas_config' );
+get_template_part( 'inc/template-parts/general/general', 'header',$header_data  );
+get_template_part( 'inc/template-parts/programas-block/programas', 'loop'  );
 ?>
-<?php
-     
-    endwhile;
-    
-   // wp_reset_postdata(); 
-    ?>
-    
+ <?php    
+  ///template-calltoaction.php
+  if($header_data['template_section']){
+    $arg = [
+        'template'=> $header_data['template_section'] 
+      ];
+    get_template_part( 'inc/template-parts/general/template', 'calltoaction', $arg);
+}
+ ?>  
 </div>
 
 <?php get_footer(); ?>

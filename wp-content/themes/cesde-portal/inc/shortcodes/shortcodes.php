@@ -7,6 +7,7 @@ require_once __DIR__ . '/cat_escuelas.php';
 require_once __DIR__ . '/sedes_section.php';
 require_once __DIR__ . '/notice_section.php';
 require_once __DIR__ .  '/calendar_time.php';
+require_once __DIR__ . '/sedes_adress.php';
 
 //social-links.php
 add_shortcode( 'social-Link', 'social_link_funtcion' );
@@ -24,5 +25,7 @@ add_shortcode('cat_escuelas_show', 'cesde_cat_escuelas');
 add_shortcode('notices_section_show', 'cesde_notices_section_function');
 //calendar_time.php
 add_shortcode('calendar_time_show', 'cesde_calendar_time_function');
+//sedes_adress.php
+add_shortcode('sedes_adress','cesde_address_function');
 
 ?>
