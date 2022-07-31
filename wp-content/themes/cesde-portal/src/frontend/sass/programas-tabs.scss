@@ -1,0 +1,240 @@
+.tabs-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+section.programas-tabs {
+  p {
+    margin-bottom: 0;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+
+    padding-inline-start: 23px;
+    li {
+      &::marker {
+        font-size: 22px;
+        line-height: 1;
+      }
+    }
+  }
+}
+.tab-title {
+  padding: 10px 5px 0;
+  @media (max-width: 767px) {
+    padding: 0px 0px 15px;
+    h2 {
+      background-color: transparent;
+      color: #706f6f;
+      border: 1px solid #ee2b7b;
+      font-size: 15px;
+    }
+  }
+
+  h2 {
+    &.active,
+    &:hover {
+      background-color: #ee2b7b;
+      color: white;
+    }
+    font-weight: 400;
+    margin: 0;
+    padding: 5px 20px;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    min-height: 53px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  @media (min-width: 768px) {
+    h2 {
+      background-color: #424242;
+      color: white;
+      font-size: 16px;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .tabs-wrapper-desktop {
+    display: none !important;
+  }
+  .tabs-wrapper {
+    flex-direction: column;
+  }
+  .no-mobile {
+    display: none !important;
+  }
+  .tab-content {
+    display: none;
+    &.open {
+      display: block !important;
+    }
+  }
+  .tab-element {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .tab-content {
+    display: none !important;
+  }
+  .tabs-wrapper-desktop {
+    .tab-element-desktop {
+      display: none;
+      &.open {
+        display: block !important;
+      }
+    }
+  }
+  .tabs-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: flex-end;
+  }
+}
+.tab-content {
+  padding: 20px 0 45px;
+  .level-item {
+    padding: 18px 18px 18px;
+    border-bottom: 3px solid #706f6f;
+    h3.level-title {
+      font-size: 24px;
+    }
+  }
+  .level-body {
+    ul.learning-list {
+      margin: 0;
+      padding: 0;
+      padding-inline-start: 23px;
+      li.learning-item {
+      }
+    }
+  }
+}
+.model-wrapper {
+  h3 {
+    font-size: 21px;
+  }
+}
+
+section.programas-tabs .model-wrapper ul {
+  padding: 20px;
+}
+.requisitos li {
+  margin-bottom: 20px;
+}
+.certificaciones,
+.convenios {
+  h3 {
+    font-size: 20px;
+  }
+}
+
+.certificados-list,
+.viveaprende-list {
+  .viveaprende-item,
+  a.viveaprende-item,
+  .certificado-item,
+  a.certificado-item {
+    border: 2px solid #ee2b7b;
+    border-radius: 10px;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 5px 15px;
+    line-height: 1.5;
+    font-weight: 700;
+  }
+  a.viveaprende-item,
+  a.certificado-item {
+    background-color: #ee2b7b;
+    color: white;
+    &:hover {
+      background-color: white;
+      color: #ee2b7b;
+    }
+  }
+  .viveaprende-item,
+  .certificado-item {
+    background-color: white;
+    color: #ee2b7b;
+  }
+}
+.viveaprende-superior-content {
+  margin-bottom: 30px;
+}
+section.programas-tabs {
+  max-width: 972px;
+  margin: auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.tab-element-desktop {
+  padding: 8vh 0;
+  .model-content {
+    display: flex;
+    gap: 60px;
+  }
+}
+.tabs-wrapper-desktop {
+  padding: 0 8px;
+}
+.aprender-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .level-learnings {
+    max-width: 760px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 6px #00000029;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: #f4f4f4;
+    .level-item {
+      padding: 40px 35px 40px;
+      background-color: #f4f4f4;
+      border: 1px solid white;
+      width: 104%;
+      position: relative;
+      left: -1px;
+      li.learning-item {
+        margin-bottom: 9px;
+      }
+    }
+  }
+}
+.program-footer-content {
+  max-width: 972px;
+  margin: auto;
+  padding: 0 15px;
+  @media (min-width: 768px) {
+    margin-bottom: 100px;
+  }
+  @media (max-width: 767px) {
+    margin-bottom: 50px;
+  }
+}
+@media (min-width: 768px) {
+  .viveaprende-list,
+  .certificados-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}

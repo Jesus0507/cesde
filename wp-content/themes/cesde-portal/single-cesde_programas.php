@@ -27,7 +27,7 @@ while (have_posts() ) : the_post();
 <section class="banner__sedes"  area-label="banner">
     <div class="banner__sedes__image">
         <?php
-            // $featured_img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full', true );
+          
             $featured_img = get_field('imagen_banner');
              $logo = get_theme_mod( 'custom_logo' );
              $image = wp_get_attachment_image_src( $logo , 'full' );
@@ -36,7 +36,7 @@ while (have_posts() ) : the_post();
              $image_height = $image[2];
            
              if($featured_img){
-                 //var_dump( $featured_img);
+              
                  $alt= $featured_img['alt']?$featured_img['alt']:get_the_title();
                  echo '<img loading="lazy" src="'.$featured_img['url'] .'" width="'. $featured_img['width'].' height="'. $featured_img['height'].'" alt="'. $alt.'" />';
              }else{
@@ -104,12 +104,8 @@ while (have_posts() ) : the_post();
            <?php if(get_field('opciones_de_matricula')): ?>
               <div class="opciones-matricula">
                   <?php 
-                  while(the_repeater_field('opciones_de_matricula')):
-                 
-                  ?>
-                  
-                      <?php 
-                      while(the_repeater_field('opcion_de_matricula')):
+                    while(the_repeater_field('opciones_de_matricula')):
+                        while(the_repeater_field('opcion_de_matricula')):
                           
                       ?>
                           <article class="row-matricula">
@@ -133,13 +129,11 @@ while (have_posts() ) : the_post();
                              </div>
                           </article>
                       <?php
-                      endwhile;
-                      ?>
-                  <?php
-                  endwhile;
+                        endwhile;
+                    endwhile;
                   ?>
               </div>
-           <?php endif; ?>
+        <?php endif; ?>
         </section>
     </div>
       
@@ -223,12 +217,24 @@ while (have_posts() ) : the_post();
         </div>
       </section>
       <div class="cesde-single-main">
-            <section class="programas-taps">
-                            <div class="taps-container">
-                                
-                            </div>
+            <section class="programas-tabs">
+                <?php  
+                $slug_base = 'inc/template-parts/programas-block/tab';
+                set_query_var('slug','inc/template-parts/programas-block/tabs-contents/tab');
+                    get_template_part( $slug_base, 'wrapper');
+                ?> 
+                 <?php  
+                    get_template_part( $slug_base, 'desktop');
+                ?>            
             </section>
       </div>
+      <section class="program-footer">
+        <div class="program-footer-content">
+            <?php
+            echo get_field('texto_informativo_inferior');
+            ?>
+        </div>
+      </section>
 </main>
 <?php
      
